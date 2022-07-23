@@ -1,0 +1,29 @@
+{
+	"parser": "@typescript-eslint/parser",
+	"parserOptions": {
+		"ecmaVersion": 2020,
+		"sourceType": "module",
+		"ecmaFeatures": { "jsx": true }
+	},
+	"extends": [
+		"plugin:react-hooks/recommended",
+		"plugin:react/recommended",
+		"plugin:jsx-a11y/recommended"
+	],
+	"plugins": ["react", "jsx-a11y"],
+	"env": {
+		"browser": true,
+		"es6": true,
+		"node": true
+	},
+	"settings": {
+		"react": {
+			"version": "18.2.0"
+		}
+	},
+	"rules": {
+		"no-console": "error",
+		"react/props-types": "off",
+		"import/order": "off"
+	}
+}
