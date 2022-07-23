@@ -14,11 +14,13 @@ export function useEvent<
 export function useEvent<
 	EH extends keyof HTMLElementEventMap,
 	T extends HTMLElement = HTMLDivElement,
->(event_name: EH, handler: (event: HTMLElementEventMap[EH]) => void, element: RefObject<T>): void
-// Document Event based interface
-export function useEvent<
-	ED extends keyof DocumentEventMap
 >(
+	event_name: EH,
+	handler: (event: HTMLElementEventMap[EH]) => void,
+	element: RefObject<T>,
+): void
+// Document Event based interface
+export function useEvent<ED extends keyof DocumentEventMap>(
 	event_name: ED,
 	callback: (event: DocumentEventMap[ED]) => void,
 	element: RefObject<Document>,
@@ -36,7 +38,9 @@ export function useEvent<
 	T extends HTMLElement = HTMLDivElement,
 >(
 	event_name: EW,
-	callback: (event: WindowEventMap[EW] | HTMLElementEventMap[EH] | Event) => void,
+	callback: (
+		event: WindowEventMap[EW] | HTMLElementEventMap[EH] | Event,
+	) => void,
 	element?: RefObject<T>,
 ) {
 	// Create a ref that stores handler
